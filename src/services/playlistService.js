@@ -8,7 +8,10 @@ class PlaylistService {
         const playlists = PlaylistRepository.getAll();
         return playlists.sort((a, b) => b.played - a.played);
     }
-
+    static getPlaylistById(id) {
+        const playlist = PlaylistRepository.getById(id);
+        return playlist;
+    }
 }
 
 module.exports = PlaylistService;

@@ -105,6 +105,12 @@ class PlaylistRepository {
     static getAll() {
         return playlists;
     }
+
+    static getById(id) {
+        const playlist = playlists.find(playlist => playlist.id === parseInt(id));
+        playlist.played++;
+        return playlist;
+    }
 }
 
 module.exports = PlaylistRepository;

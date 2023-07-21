@@ -4,6 +4,7 @@ const PlaylistController = require('../controllers/playlistController');
 const router = express.Router();
 
 router.get('/', PlaylistController.getAll);
-router.get('/sort/byPlayed', PlaylistController.sortByPlayed);
+router.get('/sort', PlaylistController.sortByPlayed);
+router.get('/:id', PlaylistController.getPlaylistById);
 
 module.exports = router;

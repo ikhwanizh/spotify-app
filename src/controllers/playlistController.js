@@ -17,6 +17,15 @@ class PlaylistController {
             return res.status(500).json({error: error.message});
         }
     }
+    static async getPlaylistById(req, res) {
+        const { id } = req.params;
+        try {
+            const playlist = await PlaylistService.getPlaylistById(id);
+            return res.status(200).json(playlist);
+        } catch (error) {
+            return res.status(500).json({error: error.message});
+        }
+    }
 }
 
 module.exports = PlaylistController;
